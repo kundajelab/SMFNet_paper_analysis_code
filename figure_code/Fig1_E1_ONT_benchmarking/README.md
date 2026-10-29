@@ -24,7 +24,7 @@ input_files/Fig1_E1_ONT_benchmarking/
 Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_sox2_example.R
 ```
 
-### Experimental QC
+### Experimental mESC DNMT-TKO SMF-ONT QC
 
 **Required archive:** `WT_SMF-ONT_qc_data.tar.gz`
 
@@ -32,7 +32,7 @@ Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_sox2_example.R
 Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMF-ONT_qc.R
 ```
 
-### Occupancy comparison at individual positions
+### QC at individual SMF positions
 
 **Required archive:** `SMFNet_mESC_basic_qc.tar.gz`
 
@@ -40,7 +40,7 @@ Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMF-ONT_qc.R
 Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMFNet_pos_comp.R
 ```
 
-### SMFNet performance metrics
+### SMFNet performance metrics for mESC DNMT-TKO SMF-ONT
 
 **Required archive:** `SMFNet_mESC_basic_qc.tar.gz`
 
@@ -48,7 +48,7 @@ Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMFNet_pos_comp.R
 Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMFNet_metrics.R
 ```
 
-### Motif analysis
+### SMFNet motif QC for mESC DNMT-TKO SMF-ONT
 
 **Required archives:**
 
