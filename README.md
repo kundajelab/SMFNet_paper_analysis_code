@@ -1,11 +1,14 @@
-# Generative models of single-molecule footprints reveal principles of combinatorial transcription factor assembly on chromatin
+# SMFNet reveals principles of combinatorial transcription factor
 Till Schwämmle#, Nathaniel Diamant#, Yuliya Badayeva, Rozemarijn Kleinendorst, Anshul Kundaje* and Arnaud R Krebs*
+
+> [!WARNING]
+> This repository is under construction. Code, documentation, and analysis instructions may be incomplete and are subject to change.
 
 <p align="justify">This repository contains code to reproduce computational analysis performed in Schwämmle, Diamant et al., bioRxiv 2026.</p>
 
 ## Abstract
 
-<p align="justify"> </p>
+<p align="justify">Combinatorial assembly of transcription factors (TFs) opens chromatin at cis-regulatory elements (cREs) to establish cell-type-specific gene expression. Dissecting the role of individual TFs and their collective function has been limited by the diversity of TF binding-site arrangements across cREs. A single regulatory sequence can support multiple configurations of TF and nucleosome occupancy, raising the possibility that distinct chromatin states reflect different TF assemblies. Predictive models linking regulatory sequence to chromatin accessibility collapse these distinct molecular states into population averages, obscuring how TF assemblies shape accessible chromatin. Here, we introduce SMFNet, a generative diffusion model that predicts distributions of single-molecule chromatin accessibility profiles from DNA sequence, and PRISM, which identifies sequence features associated with individual molecular states. Together, these approaches enable us to systematically  associate single molecule chromatin states at cREs with specific TF binding motifs. Experimental perturbation of these motifs redistributes the corresponding states as predicted by SMFNet, supporting their interpretation as TF-dependent configurations underlying chromatin opening. We then use controlled in silico motif screens to systematically dissect individual and combinatorial TF contributions to chromatin opening. Individual TFs show distinct chromatin-opening signatures, differing in accessible-region width and nucleosome-positioning precision even when associated with similar levels of chromatin accessibility. Combining motifs reveals partner- and spacing-dependent effects on chromatin accessibility, TF occupancy and nucleosome positioning. Genetic perturbation of TF binding sites using natural variation at endogenous cRE confirms that TF-specific properties shape chromatin accessibility in vivo. Together, our findings reveal sequence-encoded principles of combinatorial TF assembly during chromatin opening. </p>
 
 ## Data availability
 
