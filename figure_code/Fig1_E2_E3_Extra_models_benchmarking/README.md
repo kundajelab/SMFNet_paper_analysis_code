@@ -2,23 +2,20 @@
 
 ## Overview
 
-- **`plot_sox2_example.R`**: Plots Sox2 locus examples for Fig. 1c-d.
-- **`plot_SMF-ONT_qc.R`**: Plots experimental QC for mESCH DNMT-TKO SMF-ONT data for Fig. E1b-d.
-- **`plot_SMFNet_pos_comp.R`**: Compares SMFNet-predicted and experimental occupancy at individual positions for Fig. 1e.
-- **`plot_SMFNet_metrics.R`**: Plots performance metrics for the mESC DNMT-TKO SMF-ONT model for Fig. E1e, i-j.
-- **`count_SMFNet_motif_states.py`, `compute_SMFNet_motif_avg.py`, and `plot_SMFNet_motif_states.R`**: Calculate state percentages at putative annotated TFBSs and average enrichment around annotated motifs, and generate composite plots and motif state correlations for Fig. E1f-h, k.
+- **`plot_Sonmezer_example.R`**: Plots example region for short-read SMFNet model for Fig. E2c.
+- **`compute_Sonmezer_ONT_metrics.py`, and `plot_Sonmezer_qc.R`**: Calculate quality control metrics between ONT and short-read mESC SMFNet models. Plots quality control metrics for the short-read mESC SMFNet model for Fig. E2a-b,d-f.
 
 ## Instructions
 
 Run all commands from the repository root. Download the required archives from Zenodo and extract their contents into:
 
 ```text
-input_files/Fig1_E1_ONT_benchmarking/
+input_files/Fig1_E2_E3_Extra_models_benchmarking/
 ```
 
-### Sox2 locus examples
+### Short-read mESC SMFnet example
 
-**Required archive:** `Example_Sox2_locus_data.tar.gz`
+**Required archive:** `mESC_Sonmezer_testRegions_data.tar.gz`
 
 ```bash
 Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_sox2_example.R
