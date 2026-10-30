@@ -29,6 +29,7 @@ Rscript figure_code/Fig1_E2_E3_Extra_models_benchmarking/plot_Sonmezer_example.R
 - `mESC_Sonmezer_testRegions_data.tar.gz`
 - `mESC_SMF-ONT_testRegions_reads.tar.gz`
 
+Run the following commands in order:
 ```bash
 python figure_code/Fig1_E2_E3_Extra_models_benchmarking/compute_Sonmezer_ONT_metrics.py
 Rscript figure_code/Fig1_E2_E3_Extra_models_benchmarking/plot_Sonmezer_qc.R
