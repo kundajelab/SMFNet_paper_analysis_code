@@ -1,4 +1,4 @@
-# SMF-ONT Benchmarking
+# mESC SMF-ONT model benchmarking
 
 ## Overview
 
