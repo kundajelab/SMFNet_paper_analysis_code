@@ -1,4 +1,4 @@
-# SMFNet reveals principles of combinatorial transcription factor
+# SMFNet reveals principles of combinatorial transcription factor assembly
 Till Schwämmle#, Nathaniel Diamant#, Yuliya Badayeva, Rozemarijn Kleinendorst, Anshul Kundaje* and Arnaud R Krebs*
 
 > [!WARNING]
