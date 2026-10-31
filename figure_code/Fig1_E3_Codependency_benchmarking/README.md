@@ -90,6 +90,55 @@ python figure_code/Fig1_E3_Codependency_benchmarking/compute_TFBS_coaccessibilit
 Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_coaccessibility_triangles.R
 ```
 
+### Average SMF profiles for co-accessibility analysis
+
+**Required archives:**
+
+- `SMFNet_annotated_motif_hits_for_codependency_analysis.tar.gz`
+- `mESC_SMF-ONT_testRegions_reads.tar.gz`
+- `mESC_SMF-ONT_testRegions_states.tar.gz`
+- `SMFNet_mESC_basic_qc.tar.gz`
+
+Run the following commands in order:
+
+```bash
+python figure_code/Fig1_E3_Codependency_benchmarking/prepare_TFBS_pairs.py
+python figure_code/Fig1_E3_Codependency_benchmarking/compute_TFBS_coaccessibility.py
+Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_average_profiles.R
+```
+
+### TFBS co-binding example regions
+
+**Required archives:**
+
+- `SMFNet_annotated_motif_hits_for_codependency_analysis.tar.gz`
+- `mESC_SMF-ONT_testRegions_reads.tar.gz`
+- `mESC_SMF-ONT_testRegions_states.tar.gz`
+
+Run the following commands in order:
+
+```bash
+python figure_code/Fig1_E3_Codependency_benchmarking/prepare_TFBS_pairs.py
+python figure_code/Fig1_E3_Codependency_benchmarking/compute_TFBS_cobinding.py
+Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_cobinding_examples.R
+```
+
+### TFBS co-binding log2 odds ratio scatter
+
+**Required archives:**
+
+- `SMFNet_annotated_motif_hits_for_codependency_analysis.tar.gz`
+- `mESC_SMF-ONT_testRegions_reads.tar.gz`
+- `mESC_SMF-ONT_testRegions_states.tar.gz`
+
+Run the following commands in order:
+
+```bash
+python figure_code/Fig1_E3_Codependency_benchmarking/prepare_TFBS_pairs.py
+python figure_code/Fig1_E3_Codependency_benchmarking/compute_TFBS_cobinding.py
+Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_cobinding_scatter.R
+```
+
 ## Dependencies
 
 ### Python 3.12
@@ -101,6 +150,7 @@ Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_coaccessibility_
 | h5py | 3.16.0 |
 | tqdm | 4.70.1 |
 | scipy | 1.15.3 |
+| intervaltree | 3.1.0 |
 
 ### R 4.3
 
@@ -112,3 +162,5 @@ Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_coaccessibility_
 | dplyr | 1.2.1 |
 | stringr | 1.6.0 |
 | mgcv | 1.9-1 |
+| tidyr | 1.3.2 |
+| hdf5r | 1.3.16 |
