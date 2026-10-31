@@ -1,6 +1,6 @@
 #Run from the repository root: Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_CTCF_coaccessibility.R
 #Step 3 of 3. Run count_CTCF_motif_states.py and compute_CTCF_coaccessibility.py first.
-#Requires input_files/Fig1_E3_Codependency_benchmarking/coaccessibility_background_bias.tsv.
+#Uses input_files/Fig1_E3_Codependency_benchmarking/coaccessibility_background_bias.txt for normalization.
 #Region-level four-condition filter (needs reads in all conditions) and 20 bp smoothing radius.
 library(ggplot2)
 library(dplyr)
@@ -11,10 +11,10 @@ library(scales)
 
 #Configuration
 
-input_dir <- file.path("input_files", "Fig1_E3_Codependency_benchmarking")
 PLOT_DIR <- file.path("output", "Fig1_E3_Codependency_benchmarking", "CTCF")
 IN_DIR <- file.path(PLOT_DIR, "matrices")
-BIAS_FILE <- file.path(input_dir, "coaccessibility_background_bias.tsv")
+BIAS_FILE <- file.path("input_files", "Fig1_E3_Codependency_benchmarking", "coaccessibility_background_bias.txt")
+if (!file.exists(BIAS_FILE)) stop("Missing normalization input: ", BIAS_FILE)
 OUTPUT_FILE <- file.path(PLOT_DIR, "CTCF_aligned_mean_coaccessibility.pdf")
 
 FULL_LEN <- 1024L

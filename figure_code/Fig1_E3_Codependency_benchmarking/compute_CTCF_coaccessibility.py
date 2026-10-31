@@ -117,7 +117,7 @@ def compute_signed_mi_matrix(mat):
 
     Original states:
       -1 = missing
-       0/1/2 = accessible/bound/open-ish -> collapsed to 1
+       0/1/2 = accessible/linker/bound -> collapsed to 1
        3 = nucleosomal -> collapsed to 0
     """
     mat_collapsed = np.where(
