@@ -5,6 +5,12 @@
 - **`plot_coaccessibility_matrices.R`**: Plots smoothed experiment/model co-accessibility matrices for Fig. E3d.
 - **`plot_coaccessibility_distance.R`**: Plots the distance vs co-accessibility score GAM fit for Fig. E3e.
 - **`plot_CTCF_coaccessibility.R`**: Plots the CTCF-aligned co-accessibility summary for bound/unbound molecules for Fig. 1f.
+- **`plot_TFBS_coaccessibility_triangles.R`**: Plots region-wise TFBS co-accessibility triangle plots for Fig. 1g.
+- **`plot_TFBS_coaccessibility_scatter.R`**: Plots TFBS co-accessibility for experiment vs SMFNet for Fig. E3g.
+- **`plot_TFBS_average_profiles.R`**: Plots the mean experimental and generated SMF profiles with TFBS annotations for Fig. E3f.
+- **`plot_TFBS_cobinding_examples.R`**: Plots single-molecule states and average profiles for co-binding examples for Fig. 1h.
+- **`plot_TFBS_cobinding_scatter.R`**: Plots experiment vs SMFNet co-binding log2 odds ratios for Fig. 1i.
+
 
 ## Instructions
 
@@ -62,6 +68,26 @@ Run the following commands in order:
 python figure_code/Fig1_E3_Codependency_benchmarking/count_CTCF_motif_states.py
 python figure_code/Fig1_E3_Codependency_benchmarking/compute_CTCF_coaccessibility.py
 Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_CTCF_coaccessibility.R
+```
+
+### TFBS co-accessibility triangles
+
+**Required archives:**
+
+- `SMFNet_annotated_motif_hits_for_codependency_analysis.tar.gz`
+- `mESC_SMF-ONT_testRegions_reads.tar.gz`
+- `mESC_SMF-ONT_testRegions_states.tar.gz`
+
+**Required file:**
+
+- `coaccessibility_background_bias.txt`
+
+Run the following commands in order:
+
+```bash
+python figure_code/Fig1_E3_Codependency_benchmarking/prepare_TFBS_pairs.py
+python figure_code/Fig1_E3_Codependency_benchmarking/compute_TFBS_coaccessibility.py
+Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_coaccessibility_triangles.R
 ```
 
 ## Dependencies
