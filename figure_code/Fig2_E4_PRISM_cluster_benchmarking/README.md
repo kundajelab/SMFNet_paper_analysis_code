@@ -65,7 +65,7 @@ Rscript figure_code/Fig2_E4_PRISM_cluster_benchmarking/plot_enhancer_clusters.R
 | pandas | 3.0.5 |
 | h5py | 3.16.0 |
 | tqdm | 4.70.1 |
-| scikit-learn | 1.9.1 |
+| scikit-learn | 1.7.2 |
 | matplotlib | 3.10.3 |
 | intervaltree | 3.1.0 |
 
