@@ -76,7 +76,7 @@ Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_CTCF_coaccessibility.
 | tqdm | 4.70.1 |
 | scipy | 1.15.3 |
 
-### R 4.3.3
+### R 4.3
 
 | Package | Version |
 |---------|---------|
