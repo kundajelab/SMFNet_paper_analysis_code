@@ -4,7 +4,7 @@ Till Schwämmle#, Nathaniel Diamant#, Yuliya Badayeva, Rozemarijn Kleinendorst, 
 > [!WARNING]
 > This repository is under construction. Code, documentation, and analysis instructions may be incomplete and are subject to change.
 
-<p align="justify">This repository contains code to reproduce computational analysis performed in Schwämmle, Diamant et al., bioRxiv 2026.</p>
+<p align="justify">This repository contains code to reproduce computational analysis performed in Schwämmle, Diamant et al. 2026, bioRxiv 2026 (https://doi.org/10.64898/2026.10.30.762954).</p>
 
 ## Abstract
 
