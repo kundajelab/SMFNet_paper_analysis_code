@@ -57,28 +57,31 @@ Rscript figure_code/Fig2_E4_PRISM_cluster_benchmarking/plot_enhancer_clusters.R
 
 ## Dependencies
 
+
 ### Python 3.12
 
 | Package | Version |
 |---------|---------|
 | numpy | 2.2.6 |
 | pandas | 3.0.5 |
-| h5py | 3.16.0 |
-| tqdm | 4.70.1 |
+| h5py | 3.15.1 |
+| tqdm | 4.67.1 |
 | scikit-learn | 1.7.2 |
-| matplotlib | 3.10.3 |
+| matplotlib | 3.10.7 |
 | intervaltree | 3.1.0 |
 
-The optional PRISM generation script additionally requires PyTorch and SMFNet with its checkpoint dependencies. GPU inference has not been rerun as part of this cleanup.
 
-### R 4.4
+**NumPy exception:** For `quantify_enhancer_clusters.py`, use NumPy **1.26.4** with scikit-learn **1.7.2** in a separate Python 3.12 environment. Keep the supplied random seed and read ordering.
+
+### R 4.4.1
 
 | Package | Version |
-| --------- | --------- |
-| dplyr | 1.2.1 |
+|---------|---------|
+| tidyverse | 2.0.0 |
+| dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
-| ggplot2 | 4.0.3 |
+| ggplot2 | 4.0.2 |
 | egg | 0.4.5 |
-| gridExtra | 2.3.1 |
+| gridExtra | 2.3 |
 | ggseqlogo | 0.2.2 |
-| Biostrings | 2.74.0 |
+| Biostrings | 2.74.1 |
