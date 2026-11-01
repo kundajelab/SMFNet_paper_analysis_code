@@ -131,25 +131,25 @@ Rscript figure_code/Fig5_E8_F1_analysis/plot_disrupted_examples.R
 
 ## Dependencies
 
-### Python 3.10
-
-Versions used for calculation checks:
+### Python 3.12
 
 | Package | Version |
 |---------|---------|
-| numpy | 1.26.4 |
-| pandas | 2.3.3 |
+| numpy | 2.2.6 |
+| pandas | 3.0.5 |
 | scipy | 1.15.3 |
 | numba | 0.62.1 |
 | h5py | 3.15.1 |
 | scikit-learn | 1.7.2 |
 | tqdm | 4.67.1 |
 
+**NumPy exception:** For `cluster_variant_windows.py`, use NumPy **1.26.4** with scikit-learn **1.7.2** in a separate Python 3.12 environment. Keep the supplied random seed and input-window ordering.
 
-### R 4.4
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
+| tidyverse | 2.0.0 |
 | ggplot2 | 4.0.2 |
 | dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
@@ -164,4 +164,4 @@ Versions used for calculation checks:
 | ggrastr | 1.0.2 |
 | hexbin | 1.28.5 |
 | scales | 1.4.0 |
-| grid | 4.4.2 |
+| grid | 4.4.1 |
