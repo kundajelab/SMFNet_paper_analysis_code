@@ -147,19 +147,20 @@ Rscript figure_code/Fig1_E3_Codependency_benchmarking/plot_TFBS_cobinding_scatte
 |---------|---------|
 | numpy | 2.2.6 |
 | pandas | 3.0.5 |
-| h5py | 3.16.0 |
-| tqdm | 4.70.1 |
+| h5py | 3.15.1 |
+| tqdm | 4.67.1 |
 | scipy | 1.15.3 |
 | intervaltree | 3.1.0 |
 
-### R 4.3
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
-| ggplot2 | 4.0.3 |
+| tidyverse | 2.0.0 |
+| ggplot2 | 4.0.2 |
 | egg | 0.4.5 |
-| gridExtra | 2.3.1 |
-| dplyr | 1.2.1 |
+| gridExtra | 2.3 |
+| dplyr | 1.2.0 |
 | stringr | 1.6.0 |
 | mgcv | 1.9-1 |
 | tidyr | 1.3.2 |
