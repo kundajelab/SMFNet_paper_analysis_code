@@ -111,23 +111,24 @@ Rscript figure_code/Fig4_E7_combinedMotifs_insilico/plot_phasing.R
 
 ## Dependencies
 
-Versions used for validation:
-
-### Python 3.10
+### Python 3.12
 
 | Package | Version |
 |---------|---------|
-| numpy | 1.26.4 |
-| pandas | 2.3.3 |
+| numpy | 2.2.6 |
+| pandas | 3.0.5 |
 | scipy | 1.15.3 |
 | h5py | 3.15.1 |
 | numba | 0.62.1 |
 | tqdm | 4.67.1 |
 
-### R 4.4
+**NumPy exception:** For `compute_state_profiles.py`, use NumPy **1.26.4** in a separate Python 3.12 environment. The script checks this version because tied-read ordering affects the binned profiles.
+
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
+| tidyverse | 2.0.0 |
 | data.table | 1.18.6.1 |
 | ggplot2 | 4.0.2 |
 | dplyr | 1.2.0 |
@@ -135,4 +136,3 @@ Versions used for validation:
 | egg | 0.4.5 |
 | gridExtra | 2.3 |
 | viridis | 0.6.5 |
-
