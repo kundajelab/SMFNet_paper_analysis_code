@@ -2,12 +2,12 @@
 
 ## Overview
 
-- **`plot_baselines.R`**: Frequency scatters and center-motif residual boxplot (Fig. 4b–c); frequency, width and phasing correlations and mean errors (Fig. E7a–b,d–g).
-- **`plot_SOX2_flanks.R`**: SOX2-flank effects over motif spacing (Fig. 4e and E7c).
-- **`plot_state_profiles.R`**: SOX2 flanks at 20/60 bp and the three enhancer examples at 50 bp (Fig. 4d,i).
-- **`plot_accessible_SMF_profiles.R`**: Raw SMF profiles with KLF or ESRRB flanks at 20/60 bp (Fig. 4g and E7i).
-- **`plot_OCT4_footprints.R`**: All-molecule and accessible-only footprint changes over spacing, and the BPNet comparison (Fig. 4h and E7h,j).
-- **`plot_phasing.R`**: Phasing versus frequency, residual phasing over distance and the spacing boxplot (Fig. 4j and E7k–m).
+- **`plot_baselines.R`**: Plots frequency scatters and center-motif residual boxplot for Fig. 4b–c, as well as frequency, width and phasing correlations and mean errors for Fig. E7a–b, d–g.
+- **`plot_SOX2_flanks.R`**: Plots SOX2-flank effects over motif spacing for Fig. 4e and E7c.
+- **`plot_state_profiles.R`**: Plots SOX2 flanks at 20/60 bp and the three enhancer examples at 50 bp for Fig. 4d,i.
+- **`plot_accessible_SMF_profiles.R`**: Plots accessible-conditioned SMF profiles with OCY4::SOX2 center and KLF or ESRRB flanks at 20/60 bp for Fig. 4g and E7i.
+- **`plot_OCT4_footprints.R`**: Plots all-molecule and accessible-only footprint changes over spacing, as well as the BPNet comparison for Fig. 4h and E7h,j.
+- **`plot_phasing.R`**: Plots boundary disperions versus frequency, residual boundary dispersion over distance and the spacing boxplot for Fig. 4j and E7k–m.
 
 ## Instructions
 
