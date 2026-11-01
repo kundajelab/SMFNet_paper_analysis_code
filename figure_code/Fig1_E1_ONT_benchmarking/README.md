@@ -72,19 +72,20 @@ Rscript figure_code/Fig1_E1_ONT_benchmarking/plot_SMFNet_motif_states.R
 |---------|---------|
 | numpy | 2.2.6 |
 | pandas | 3.0.5 |
-| h5py | 3.16.0 |
-| tqdm | 4.70.1 |
+| h5py | 3.15.1 |
+| tqdm | 4.67.1 |
 
-### R 4.4
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
-| ggplot2 | 4.0.3 |
+| tidyverse | 2.0.0 |
+| ggplot2 | 4.0.2 |
 | egg | 0.4.5 |
-| gridExtra | 2.3.1 |
+| gridExtra | 2.3 |
 | hdf5r | 1.3.16 |
 | data.table | 1.18.6.1 |
 | viridis | 0.6.5 |
 | ggrastr | 1.0.2 |
-| dplyr | 1.2.1 |
+| dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
