@@ -33,7 +33,7 @@ Rscript figure_code/Fig2_E4_ChromBPNet_benchmark/plot_marginalizations.R
 
 **Required archive:**
 
-- `GpC_marginalizations.tar.gz`
+- `GpC_only_marginalizations.tar.gz`
 
 ```bash
 Rscript figure_code/Fig2_E4_ChromBPNet_benchmark/plot_GpC_marginalizations.R
@@ -94,7 +94,7 @@ Rscript figure_code/Fig2_E4_ChromBPNet_benchmark/plot_ISM_correlations.R
 
 | Package | Version |
 |---------|---------|
-| numpy | 1.26.4 |
+| numpy | 2.2.6 |
 | torch | 2.5.1+cu121 |
 | h5py | 3.15.1 |
 | matplotlib | 3.10.7 |
@@ -102,10 +102,11 @@ Rscript figure_code/Fig2_E4_ChromBPNet_benchmark/plot_ISM_correlations.R
 | bpnet-lite | 0.9.1 |
 | tangermeme | 0.5.1 |
 
-### R 4.4
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
+| tidyverse | 2.0.0 |
 | ggplot2 | 4.0.2 |
 | dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
