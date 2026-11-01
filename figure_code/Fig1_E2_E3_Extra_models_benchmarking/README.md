@@ -75,20 +75,20 @@ Rscript figure_code/Fig1_E2_E3_Extra_models_benchmarking/plot_fiber_metrics.R
 |---------|---------|
 | numpy | 2.2.6 |
 | pandas | 3.0.5 |
-| h5py | 3.16.0 |
-| tqdm | 4.70.1 |
+| h5py | 3.15.1 |
+| tqdm | 4.67.1 |
 | scipy | 1.15.3 |
 
-### R 4.4
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
-| ggplot2 | 4.0.3 |
+| tidyverse | 2.0.0 |
+| ggplot2 | 4.0.2 |
 | egg | 0.4.5 |
-| gridExtra | 2.3.1 |
+| gridExtra | 2.3 |
 | hdf5r | 1.3.16 |
 | tibble | 3.3.1 |
 | ggrastr | 1.0.2 |
-| dplyr | 1.2.1 |
+| dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
-
