@@ -98,12 +98,12 @@ python figure_code/Fig3_E6_singleMotif_insilico/plot_motif_logos.py
 
 ## Dependencies
 
-### Python 3.10
+### Python 3.12
 
 | Package | Version |
 |---------|---------|
-| numpy | 1.26.4 |
-| pandas | 2.3.3 |
+| numpy | 2.2.6 |
+| pandas | 3.0.5 |
 | h5py | 3.15.1 |
 | numba | 0.62.1 |
 | tqdm | 4.67.1 |
@@ -111,21 +111,23 @@ python figure_code/Fig3_E6_singleMotif_insilico/plot_motif_logos.py
 | tangermeme | 0.5.1 |
 | torch | 2.5.1+cu121 |
 
+**NumPy exception:** For `compute_single_motif_profiles.py` and `compute_homotypic_profiles.py`, use NumPy **1.26.4** in a separate Python 3.12 environment to preserve the original ordering of tied reads between bins.
 
-### R 4.4
+### R 4.4.1
 
 | Package | Version |
 |---------|---------|
-| dplyr | 1.2.1 |
+| tidyverse | 2.0.0 |
+| dplyr | 1.2.0 |
 | tidyr | 1.3.2 |
-| ggplot2 | 4.0.3 |
+| ggplot2 | 4.0.2 |
 | stringr | 1.6.0 |
-| readr | 2.2.0 |
+| readr | 2.1.6 |
 | egg | 0.4.5 |
-| gridExtra | 2.3.1 |
+| gridExtra | 2.3 |
 | data.table | 1.18.6.1 |
 | viridis | 0.6.5 |
 | ggh4x | 0.3.1 |
 | BSgenome.Mmusculus.UCSC.mm10 | 1.4.3 |
-| Biostrings | 2.74.0 |
+| Biostrings | 2.74.1 |
 | GenomicRanges | 1.58.0 |
