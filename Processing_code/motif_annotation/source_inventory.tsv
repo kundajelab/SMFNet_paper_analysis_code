@@ -1,0 +1,17 @@
+file	source
+fold0.json	/g/krebs/schwammle/chrombpnet/smf_model_comp/files/fold0.json
+mESC_accessible_regions.narrowPeak	/g/krebs/schwammle/chrombpnet/smf_model_comp/files/20250705_acBaitRegions.narrowPeak
+mESC_background_regions.narrowPeak	/g/krebs/schwammle/chrombpnet/smf_model_comp/files/20250705_bgBaitRegions.narrowPeak
+mESC_bias_nonpeaks_fold0.bed	/g/krebs/schwammle/chrombpnet/smf_model_comp/bias/BaitRegions_fold0_negatives.bed
+mESC_annotation_regions.bed	/g/krebs/schwammle/smf_model/files/bed/20250915_acBaitRegions.bed
+mESC_annotation_regions_2048bp.bed	/g/krebs/schwammle/smf_model/nate_model/output/20260419_nuc_clusters/files/20260723_acBaitRegions_2048.bed
+JASPAR2026_vertebrates.meme	/g/krebs/schwammle/utilities/motifs/files/JASPAR2026_CORE_vertebrates_non-redundant_tf_names_fixed.meme
+compute_ChromBPNet_DeepSHAP.py	/g/krebs/schwammle/smf_model/zenodo_manual/example_scripts/Fig1_E1_ONT_benchmarking/20260318_chrombpnet_deepshap.py
+run_ChromBPNet_modisco.sh	/g/krebs/schwammle/smf_model/zenodo_manual/example_scripts/Fig1_E1_ONT_benchmarking/20260318_run_chrombpnet_modisco.sh
+run_ChromBPNet_finemo.sh	/g/krebs/schwammle/smf_model/zenodo_manual/example_scripts/Fig1_E1_ONT_benchmarking/20260323_run_chrombpnet_finemo.sh
+trim_motif_CWMs.py	/g/krebs/schwammle/smf_model/zenodo_manual/example_scripts/Fig1_E1_ONT_benchmarking/20260323_trim_meme_file.py
+annotate_finemo_hits.py	/g/krebs/schwammle/smf_model/zenodo_manual/example_scripts/Fig1_E1_ONT_benchmarking/20260724_add_names_to_finemo_hits.py
+prepare_ATAC_data.sh	/g/krebs/schwammle/atac/scripts/get_sra_atac.sh
+prepare_ATAC_data.sh	/g/krebs/schwammle/atac/scripts/process_atac.sh
+prepare_ATAC_data.sh	/g/krebs/schwammle/atac/data/PMID36471082/merged_peaks_full/call_merge_peaks_full.sh
+prepare_ATAC_data.sh	/g/krebs/schwammle/atac/atac_list.txt
