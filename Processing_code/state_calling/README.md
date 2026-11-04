@@ -1,14 +1,14 @@
 # Single-molecule chromatin state calling
 
-`call_states.py` converts experimental or SMFNet-sampled methylation calls into chromatin-state annotations along each molecule. It supports both H5 layouts used in this repository and runs on CPUs without SMFNet, PyTorch or a GPU. The standard calling parameters are unchanged.
+`call_states.py` converts experimental or SMFNet-sampled methylation calls into chromatin-state annotations along each molecule. It supports H5 layout produced by SMFNet sampling and by data processing scripts provided in this repository. The script runs on CPUs without SMFNet, PyTorch or a GPU. The standard calling parameters are unchanged.
 
-Place this folder at `Processing_code/state_calling/` and run commands from the SMFNet_paper_analysis_code repository root.
+Run commands from the SMFNet_paper_analysis_code repository root.
 
 ## How the calling works
 
-This is **molecule-wide, annotation-independent footprint classification**, extending the logic of bin-based single-molecule calling. Krebs et al. (2017) classified individual molecules using binarized methylation in four predefined collection bins around transcription start sites. Here, classification follows the methylation pattern across each supplied molecule/window rather than requiring promoter coordinates, TF motifs or predefined collection bins. The relationship is conceptual: this is a stretch-length classifier, not a reimplementation of the original four-bin classifier. See [Krebs et al., Molecular Cell (2017)](https://doi.org/10.1016/j.molcel.2017.06.027), *Genome-wide Single-Molecule Footprinting Reveals High RNA Polymerase II Turnover at Paused Promoters*.
+This is **molecule-wide, annotation-independent footprint classification**, extending the logic of bin-based single-molecule calling (See [Krebs et al., Molecular Cell (2017)](https://doi.org/10.1016/j.molcel.2017.06.027)). Classification follows the methylation pattern across each supplied molecule or window, without requiring promoter coordinates, TF motifs or predefined collection bins. TF-like footprint calls are operational classifications based on protection patterns, rather than definitive evidence of TF binding. Footprints can be annotated using underlying TF sequence motifs, but neither the footprint nor its overlap with a motif conclusively identifies the bound protein.
 
-The experimental rationale is that SMF labeling is performed under saturating methyltransferase conditions: exposed, assayable DNA is efficiently methylated, while protein-protected DNA remains comparatively unmethylated. This makes stretches of methylated and unmethylated calls informative about accessibility and protection on individual molecules and supports a simple rule-based classification. Saturation concerns labeling of accessible substrate; it does not imply that every position on a molecule should be methylated. Reliable interpretation still depends on labeling efficiency, methylation-call quality and the spacing of assayable sites. The caller does not estimate or correct those properties itself.
+The experimental rationale is that SMF labeling is performed under saturating methyltransferase conditions: exposed, assayable DNA is expected to be efficiently methylated, while protein-protected DNA remains comparatively unmethylated. Stretches of methylated and unmethylated calls therefore provide information about accessibility and protection on individual molecules, supporting a simple rule-based classification. Reliable interpretation nevertheless depends on labeling efficiency, methylation-call quality and the spacing of assayable sites. The caller does not estimate or correct for these properties, and its classifications should be interpreted in light of these limitations.
 
 The algorithm operates separately on each molecule:
 
@@ -16,9 +16,7 @@ The algorithm operates separately on each molecule:
 2. Label protected stretches shorter than 70 bp as short footprints (`TF`) and stretches of at least 70 bp as long protected footprints (`nucleosome`). Short, uncertain stretches touching a missing call or a read edge are handled using the 50-bp occupied-border threshold.
 3. Identify accessible stretches, allowing short protected footprints to lie within a broader opening while retaining their footprint labels. Accessible stretches shorter than 80 bp receive the `linker` label; stretches of at least 80 bp receive the `accessible` label. The accessible-border threshold is 20 bp.
 
-Calling uses valid measured sites and their genomic spacing; unassayed sites are not treated as protected calls. At least three valid sites are needed to estimate stretches. Missing calls and read boundaries limit the evidence available for calling short stretches. The output remains at the supplied measured positions, rather than creating measurements at unassayed bases.
-
-`TF` and `nucleosome` are operational footprint-size classes. A short footprint does not identify a particular TF, and a long protected stretch is not proof of a specific nucleosome. Motif annotation and other comparisons are downstream analyses. The same calling rules are applied to experiment and model samples.
+`TF` and `nucleosome` are operational footprint-size classes. A short footprint does not identify a particular TF, and a long protected stretch is not proof of a specific nucleosome. Motif annotation and other comparisons are downstream analyses. The same calling rules are applied to experiment and model samples. Linker calls were collapsed as accessible in the SMFNet preprint analysis.
 
 ## Run with the standard settings
 
@@ -60,11 +58,11 @@ The fixed 50/20/70/80-bp settings are the standard workflow. `OC_THRESH = "auto"
 
 ## Input and output formats
 
-Input accessibility calls must be hard calls: `-1` missing/unassayed, `0` methylated/accessible, and `1` unmethylated/protected. Probability matrices and endogenous methylation channels are not suitable substitutes.
+Input accessibility calls must be hard calls: `-1` missing/unassayed, `0` methylated/accessible, and `1` unmethylated/protected.
 
 Supported inputs:
 
-- Original layout: `smf_mat/<region>` and `smf_pos/<region>`.
+- Data extraction layout: `smf_mat/<region>` and `smf_pos/<region>`.
 - Indexed samples layout: `region_ids`, with `regions/00000000/predicted/smf` and `regions/00000000/predicted/positions` for each numbered region. Use `SUBGROUP = "observed"` for experimental reads if an `observed` subgroup is present.
 
 The matrix shape is molecules × measured positions. Non-square transposed matrices can be detected automatically. For square matrices stored as positions × molecules, specify `MATRIX_ORDER = "positions-by-reads"` explicitly. Positions must be finite and strictly increasing.
@@ -85,45 +83,40 @@ By default the script also writes `<prefix>_states_oc_density.pdf` and `<prefix>
 
 ## State H5 files on Zenodo
 
-Download archives from the [Zenodo deposition](https://zenodo.org/uploads/23407172). The table lists states called from **model-sampled reads**, using the saved upload inventory and local archive manifests. The private draft was not accessible for a fresh online check. Experimental states packaged alongside them are listed separately below.
+Download archives from the [Zenodo deposition](https://zenodo.org/uploads/23407172). The tables list states called from **model-sampled and experimental reads**, using the saved upload inventory and local archive manifests. The private draft was not accessible for a fresh online check. Model-sampled and experimental states are listed separately below.
 
-| Archive | Model-sampled state H5 files | Extract into |
-|---------|-----------------------------|--------------|
-| `Example_Sox2_locus_data.tar.gz` | `Fig1_E1_ONT_benchmarking/Example_SOX2_locus_SMFNet_states.h5` | `input_files/` (archive includes the figure subdirectory) |
-| `mESC_SMF-ONT_testRegions_states.tar.gz` | `mESC_SMF-ONT_testRegions_SMFNet_states.h5` | `input_files/Fig1_E1_ONT_benchmarking/` |
-| `ChromBPNet_SMFNet_marginalizations.tar.gz` | `SMFNet_marginalization_states.h5` | `input_files/Fig2_E4_ChromBPNet_benchmark/` |
-| `mCHIRA_CRE6005_data.tar.gz` | `mCHIRA_CRE6005_SMFNet_states.h5` | `input_files/Fig2_E5_mCHIRA_clusters/` |
-| `SMFNet-ONT_insilico_gc_inputs.tar.gz` | `SMFNet-ONT_insilico_gc_test_states.h5` | `input_files/Fig3_E6_singleMotif_insilico/` |
-| `SMFNet-ONT_insilico_homotypic_states.tar.gz` | `SMFNet-ONT_insilico_homotypic_motifs_spacing_{spacing}bp_states.h5`; spacing = 20, 30, 40, 50, 60, 70, 80 | `input_files/Fig3_E6_singleMotif_insilico/` |
-| `Three_motif_states.tar.gz` | `three_motif_spacing_{spacing}bp_states.h5`; spacing = 20–100 in 5-bp steps (17 files) | `input_files/Fig4_E7_combinedMotifs_insilico/` |
-| `Three_motif_flank_controls.tar.gz` | `flank_only_spacing_{spacing}bp_states.h5`; spacing = 20–100 in 5-bp steps (17 files) | `input_files/Fig4_E7_combinedMotifs_insilico/` |
-| `mESC_enhancer_example_states.tar.gz` | `mesc_enhancer_spacing_{spacing}bp_states.h5`; spacing = 20, 30, 40, 50, 60, 70, 80 | `input_files/Fig4_E7_combinedMotifs_insilico/` |
-| `F1_states.tar.gz` | `F1_predicted_common_states.h5` | `input_files/Fig5_E8_F1_analysis/` |
+| Archive | Model-sampled state H5 files |
+|---------|-----------------------------|
+| `Example_Sox2_locus_data.tar.gz` | `Example_SOX2_locus_SMFNet_states.h5` | 
+| `mESC_SMF-ONT_testRegions_states.tar.gz` | `mESC_SMF-ONT_testRegions_SMFNet_states.h5` |
+| `ChromBPNet_SMFNet_marginalizations.tar.gz` | `SMFNet_marginalization_states.h5` |
+| `mCHIRA_CRE6005_data.tar.gz` | `mCHIRA_CRE6005_SMFNet_states.h5` |
+| `SMFNet-ONT_insilico_gc_inputs.tar.gz` | `SMFNet-ONT_insilico_gc_test_states.h5` |
+| `SMFNet-ONT_insilico_homotypic_states.tar.gz` | `SMFNet-ONT_insilico_homotypic_motifs_spacing_{spacing}bp_states.h5`; spacing = 20, 30, 40, 50, 60, 70, 80 |
+| `Three_motif_states.tar.gz` | `three_motif_spacing_{spacing}bp_states.h5`; spacing = 20–100 in 5-bp steps (17 files) |
+| `Three_motif_flank_controls.tar.gz` | `flank_only_spacing_{spacing}bp_states.h5`; spacing = 20–100 in 5-bp steps (17 files) |
+| `mESC_enhancer_example_states.tar.gz` | `mesc_enhancer_spacing_{spacing}bp_states.h5`; spacing = 20, 30, 40, 50, 60, 70, 80 |
+| `F1_states.tar.gz` | `F1_predicted_common_states.h5` |
 
 The braces above describe filename families, not literal filenames. The confirmed archive mappings cover 54 model-sampled state H5 files. These are already called states: use them directly for downstream analysis rather than passing them through `call_states.py` again.
 
-The same archives also supply experimental state files:
+### Experimental state calls
 
-- `Example_Sox2_locus_data.tar.gz`: `Fig1_E1_ONT_benchmarking/Example_SOX2_locus_Experiment_states.h5`.
-- `mESC_SMF-ONT_testRegions_states.tar.gz`: `mESC_SMF-ONT_testRegions_Experiment_states.h5`.
-- `mCHIRA_CRE6005_data.tar.gz`: `mCHIRA_CRE6005_Experiment_states.h5`.
-- `F1_states.tar.gz`: `F1_B6_states.h5` and `F1_SPRET_states.h5`.
+These  H5 files contain states called from experimental molecules. They are already included in the uploaded archives listed below. No additional state calling is required to use them in the figure analyses.
 
-`SMFNet-ONT_insilico_single_motif_states.tar.gz`, containing `SMFNet-ONT_insilico_single_motif_example_states.h5`, exists locally but is absent from the saved upload inventory. Its upload status is therefore unconfirmed. Likewise, the contents of the broader `results_*.tar.gz` archives have not been inventoried here, so no additional state H5 members are inferred from those archive names. See the [sampled-read table](../read_sampling/README.md#sampled-reads-available-on-zenodo) for the upstream read H5s.
+| Archive | Experimental state H5 file | Dataset | 
+|---------|----------------------------|---------|
+| `Example_Sox2_locus_data.tar.gz` | `Example_SOX2_locus_Experiment_states.h5` | Experimental SMF-ONT at the Sox2 example locus | 
+| `mESC_SMF-ONT_testRegions_states.tar.gz` | `mESC_SMF-ONT_testRegions_Experiment_states.h5` | Experimental mESC SMF-ONT test regions |
+| `mCHIRA_CRE6005_data.tar.gz` | `mCHIRA_CRE6005_Experiment_states.h5` | Experimental mCHIRA CRE6005 library |
+| `F1_states.tar.gz` | `F1_B6_states.h5` | F1 experimental molecules assigned to the B6 allele | 
+| `F1_states.tar.gz` | `F1_SPRET_states.h5` | F1 experimental molecules assigned to the SPRET allele | 
 
-For example, download `mESC_SMF-ONT_testRegions_states.tar.gz` into Downloads and run:
 
-```bash
-mkdir -p input_files/Fig1_E1_ONT_benchmarking
-tar -xzf "$HOME/Downloads/mESC_SMF-ONT_testRegions_states.tar.gz" \
-  -C input_files/Fig1_E1_ONT_benchmarking
-```
-
-Use the corresponding destination in the table for other archives. Supplied state files keep their published filenames; newly computed files use the `OUT_STR` prefix described above. The local mCHIRA archive was updated to replace its sequence FASTA; its state H5s were unchanged.
 
 ## Dependencies
 
-Shared reproduction targets: Python 3.12. These package versions follow the analysis environment targets; this documentation update does not install or change the environment.
+## Python 3.12
 
 | Package | Version |
 |---------|---------|
@@ -133,9 +126,3 @@ Shared reproduction targets: Python 3.12. These package versions follow the anal
 | scipy | 1.15.3 |
 | matplotlib | 3.10.7 |
 | seaborn | 0.13.2 |
-
-Fixed-threshold calling with `MAKE_PLOTS = False` needs only NumPy, h5py and Numba. Diagnostics and automatic thresholds additionally use the plotting/scientific packages above.
-
-## Validation
-
-The existing validation compares intermediate stretch matrices, stretch lengths and final states against the original implementation, including real H5 regions and automatic thresholds. The recorded CPU benchmark measured a 61.2-fold improvement on 5,000 × 400 matrices with two threads after kernel warm-up; this excludes compilation and H5 I/O and is not an end-to-end runtime claim. The configuration cleanup preserves the calling kernels and default thresholds. A matrix-dimension typo was corrected (`positions.size`); both H5 layouts and a transposed input were checked against the saved reference state outputs.
