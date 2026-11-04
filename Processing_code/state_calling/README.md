@@ -16,7 +16,7 @@ The algorithm operates separately on each molecule:
 2. Label protected stretches shorter than 70 bp as short footprints (`TF`) and stretches of at least 70 bp as long protected footprints (`nucleosome`). Short, uncertain stretches touching a missing call or a read edge are handled using the 50-bp occupied-border threshold.
 3. Identify accessible stretches, allowing short protected footprints to lie within a broader opening while retaining their footprint labels. Accessible stretches shorter than 80 bp receive the `linker` label; stretches of at least 80 bp receive the `accessible` label. The accessible-border threshold is 20 bp.
 
-`TF` and `nucleosome` are operational footprint-size classes. A short footprint does not identify a particular TF, and a long protected stretch is not proof of a specific nucleosome. Motif annotation and other comparisons are downstream analyses. The same calling rules are applied to experiment and model samples. Linker calls were collapsed as accessible in the SMFNet preprint analysis.
+`TF` and `nucleosome` are operational footprint-size classes. A short footprint does not identify a particular TF, and a long protected stretch is not definitive proof of a nucleosome. Motif annotation and other comparisons are downstream analyses. The same calling rules are applied to experiment and model samples. For the analysis presented in the SMFNet preprint, `Linker` calls were collapsed as `Accessible`.
 
 ## Run with the standard settings
 
