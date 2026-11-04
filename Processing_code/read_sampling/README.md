@@ -31,14 +31,14 @@ These archives are listed in the saved Zenodo upload inventory. The table identi
 
 | Archive | Sampled-read files inside | Dataset / extraction destination |
 |---------|---------------------------|---------------------------------|
-| `Example_Sox2_locus_data.tar.gz` | `Fig1_E1_ONT_benchmarking/Example_SOX2_locus_SMFNet_reads.h5` | Sox2 locus example. Extract into `input_files/`; the archive supplies the figure subdirectory. |
-| `mESC_SMF-ONT_testRegions_reads.tar.gz` | `mESC_SMF-ONT_testRegions_SMFNet_reads.h5` | mESC ONT test-region predictions. Extract into `input_files/Fig1_E1_ONT_benchmarking/`. The same archive also contains experimental reads. |
-| `mESC_Sonmezer_testRegions_data.tar.gz` | `mESC_Sonmezer_testRegions_SMFNet_reads.h5` | Short-read mESC model predictions. Extract into `input_files/Fig1_E2_E3_Extra_models_benchmarking/`. |
-| `Extra_models_and_Fiber-seq_inputs.tar.gz` | `GM12878_Fiber-seq_testRegions_samples.h5` | GM12878 Fiber-seq examples. Extract into `input_files/Fig1_E2_E3_Extra_models_benchmarking/`. Other model metric tables in this archive are not sampled reads. |
-| `mCHIRA_CRE6005_data.tar.gz` | `mCHIRA_CRE6005_SMFNet_reads.h5` | CRE6005 WT and mutant reads restricted to the 252-bp variable region. Extract into `input_files/Fig2_E5_mCHIRA_clusters/`. |
-| `mCHIRA_sampled_reads_and_clusters.tar.gz` | `mCHIRA_CRE6005_SMFNet_untrimmed_reads.h5`, `mCHIRA_CRE6005_SMFNet_reads.h5` | Full sampled output windows and the corresponding 252-bp reads: 1,024 reads for each of 16 constructs. Also includes cluster annotations. Extract into `input_files/Fig2_E5_mCHIRA_clusters/`. The restricted reads overlap those in the preceding archive. |
-| `OCT4_footprint_sampled_reads.tar.gz` | `footprint_samples/three_motif_spacing_*bp/samples.h5` | Sampled-read subsets for the OCT4 footprint analysis at spacings 20–100 bp in 5-bp steps. Extract into `input_files/Fig4_E7_combinedMotifs_insilico/`, preserving the subdirectories. |
-| `F1_sampled_reads.tar.gz` | `F1_parental_samples.h5`, `F1_projected_common_samples.h5` | F1 parental predictions and their projection onto common coordinates. Extract into `input_files/Fig5_E8_F1_analysis/`. These are two representations of the same predictions. |
+| `Example_Sox2_locus_data.tar.gz` | `Fig1_E1_ONT_benchmarking/Example_SOX2_locus_SMFNet_reads.h5` | Reads sampled for Sox2 locus example. |
+| `mESC_SMF-ONT_testRegions_reads.tar.gz` | `mESC_SMF-ONT_testRegions_SMFNet_reads.h5` | mESC ONT test-region predictions. Used for benchmarking. |
+| `mESC_Sonmezer_testRegions_data.tar.gz` | `mESC_Sonmezer_testRegions_SMFNet_reads.h5` | Short-read mESC model predictions. Used for benchmarking |
+| `Extra_models_and_Fiber-seq_inputs.tar.gz` | `GM12878_Fiber-seq_testRegions_samples.h5` | GM12878 Fiber-seq examples. Used to plot Fiber-seq example regions. |
+| `mCHIRA_CRE6005_data.tar.gz` | `mCHIRA_CRE6005_SMFNet_reads.h5` | CRE6005 WT and mutant reads restricted to the 252-bp variable region. |
+| `mCHIRA_sampled_reads_and_clusters.tar.gz` | `mCHIRA_CRE6005_SMFNet_untrimmed_reads.h5`, `mCHIRA_CRE6005_SMFNet_reads.h5` | Full sampled output windows and the corresponding 252-bp reads: 1,024 reads for each of 16 constructs. Also includes cluster annotations. |
+| `OCT4_footprint_sampled_reads.tar.gz` | `footprint_samples/three_motif_spacing_*bp/samples.h5` | Sampled-read subsets for the OCT4 footprint analysis at spacings 20–100 bp in 5-bp steps. |
+| `F1_sampled_reads.tar.gz` | `F1_parental_samples.h5`, `F1_projected_common_samples.h5` | F1 parental predictions and their projection onto common coordinates.|
 
 
 ## Generate backgrounds
