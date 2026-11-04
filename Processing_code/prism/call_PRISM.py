@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 
 MODEL = "trained_models/mESC_Sonmezer_SMFNet_model"
 FASTA = Path("input_files/prism/Phc3_CRE6005_PRISM_2048bp.fasta")
-READS_H5 = Path("input_files/Fig2_E5_mCHIRA_clusters/mCHIRA_CRE6005_SMFNet_reads.h5")
+READS_H5 = Path("input_files/prism/mCHIRA_CRE6005_SMFNet_reads.h5")
 OUTPUT_DIR = Path("output/prism")
 REGION = "CRE_6005"
 READ_WINDOW_START = 859
