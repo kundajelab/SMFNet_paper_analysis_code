@@ -8,10 +8,10 @@ The following files are available on zenodo.
 
 | Archive | Relevant contents | Use |
 |---------|-------------------|-----|
-| `insilico_motif_CWMs.tar.gz` | `insertion_cwms.meme`, `selected_cwms.meme` | Use **insertion_cwms.meme** for background filtering and insertion. The selected CWMs are for logos. |
+| `insilico_motif_CWMs.tar.gz` | `insertion_cwms.meme`, `selected_cwms.meme` | ChromBPNet CWMs used for background filtering and insertion. |
 | `Combined_motif_analysis_inputs.tar.gz` | `background_noMotif.fasta` | Original 200 motif-depleted backgrounds. |
 | `SMFNet-ONT_insilico_gc_inputs.tar.gz` | `gc_backgrounds/*.fasta` and GC-screen states | Original 200 backgrounds for each GC target from 30 to 70%. |
-| `Combined_motif_original_FASTAs.tar.gz` | `fasta/*.fasta` | Original triplet and flank-control libraries. Can be sampled directly. |
+| `Combined_motif_original_FASTAs.tar.gz` | `fasta/*.fasta` | Original triplet and flank-control libraries. |
 | `CTCF_PRISM_results.tar.gz` | `CTCF_example_sequence.fa` | The CTCF example sequence at chr1:191287950–191289998. |
 | `Example_Sox2_locus_data.tar.gz` | `Fig1_E1_ONT_benchmarking/Example_SOX2_locus_regions.bed` | The paper's tiled Sox2 locus example: 21 windows of 2,048 bp. |
 | `Endogenous_ISM_inputs.tar.gz` | `mESC_endogenous_regions.fa` | 11,682 active test-region sequences, each 2,048 bp, retained for the ISM scatter analysis versue ChromBPnet. |
